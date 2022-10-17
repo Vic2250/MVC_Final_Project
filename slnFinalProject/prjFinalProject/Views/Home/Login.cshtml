@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<p></p>
+<form method="post" action="@Url.Action("Login")">
+    <div class="panel panel-success">
+        <div class="panel-heading">登入</div>
+        <div class="panel-body">
+            <p>
+                帳號：
+                <input type="text" class="form-control" name="txtUid" required />
+            </p>
+            <p>
+                密碼：
+                <input type="password" class="form-control" name="txtPwd" required />
+            </p>
+            <p>
+                <input type="submit" class="btn btn-info" value="登入" />
+            </p>
+            <p class="text-danger">@ViewBag.Err</p>
+            <br />
+            <br />
+            <p>提示：  Wang  |  0000    or    Lin  |  6666    or    Chen  |  8888</p>
+        </div>
+    </div>
+</form>

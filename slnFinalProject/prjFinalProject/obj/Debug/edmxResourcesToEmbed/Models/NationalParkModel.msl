@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NationalParkModelStoreContainer" CdmEntityContainer="NationalParkEntities">
+    <EntitySetMapping Name="TableNPs1091761">
+      <EntityTypeMapping TypeName="NationalParkModel.TableNPs1091761">
+        <MappingFragment StoreEntitySet="TableNPs1091761">
+          <ScalarProperty Name="編號" ColumnName="編號" />
+          <ScalarProperty Name="名稱" ColumnName="名稱" />
+          <ScalarProperty Name="縣市" ColumnName="縣市" />
+          <ScalarProperty Name="地址" ColumnName="地址" />
+          <ScalarProperty Name="電話" ColumnName="電話" />
+          <ScalarProperty Name="網址" ColumnName="網址" />
+          <ScalarProperty Name="資源特色" ColumnName="資源特色" />
+          <ScalarProperty Name="介紹" ColumnName="介紹" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

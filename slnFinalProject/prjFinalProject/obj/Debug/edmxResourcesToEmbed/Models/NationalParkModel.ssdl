@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NationalParkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TableNPs1091761">
+    <Key>
+      <PropertyRef Name="編號" />
+    </Key>
+    <Property Name="編號" Type="int" Nullable="false" />
+    <Property Name="名稱" Type="nvarchar" MaxLength="12" />
+    <Property Name="縣市" Type="nvarchar" MaxLength="5" />
+    <Property Name="地址" Type="nvarchar" MaxLength="30" />
+    <Property Name="電話" Type="nvarchar" MaxLength="15" />
+    <Property Name="網址" Type="nvarchar" MaxLength="30" />
+    <Property Name="資源特色" Type="nvarchar" MaxLength="60" />
+    <Property Name="介紹" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityContainer Name="NationalParkModelStoreContainer">
+    <EntitySet Name="TableNPs1091761" EntityType="Self.TableNPs1091761" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

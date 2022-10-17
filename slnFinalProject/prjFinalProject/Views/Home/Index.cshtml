@@ -1,0 +1,88 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model IPagedList<prjFinalProject.Models.TableNPs1091761>
+
+@{
+    ViewBag.Title = "NationalPark";
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+<h2>國家公園資訊</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().編號)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().名稱)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().縣市)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().地址)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().電話)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().網址)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().資源特色)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().介紹)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.編號)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.名稱)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.縣市)
+            </td>
+            <td>
+                <a href="https://www.google.com/maps/place/@item.地址"
+                   class="btn btn-success" target="_blank">@Html.DisplayFor(modelItem => item.地址)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.電話)
+            </td>
+            <td>
+                <a href="@item.網址" target="_blank" style="color:#F8C471">
+                    @Html.DisplayFor(modelItem => item.網址)
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.資源特色)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.介紹)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit")?Count=@item.編號"
+                   class="btn btn-warning">編輯</a>
+                <p></p>
+                <a href="@Url.Action("Delete")?Number=@item.編號"
+                   class="btn btn-danger"
+                   onclick="return confirm('確定要刪除編號 @item.編號 的訂單編號嗎?');">
+                    刪除
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NationalParkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TableNPs1091761">
+    <Key>
+      <PropertyRef Name="編號" />
+    </Key>
+    <Property Name="編號" Type="Int32" Nullable="false" />
+    <Property Name="名稱" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="縣市" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="地址" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="電話" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="網址" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="資源特色" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="介紹" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="NationalParkEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TableNPs1091761" EntityType="Self.TableNPs1091761" />
+  </EntityContainer>
+</Schema>

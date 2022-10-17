@@ -1,0 +1,85 @@
+﻿@model IEnumerable<prjFinalProject.Models.TableNPs1091761>
+
+@{
+    ViewBag.Title = "查詢編號結果";
+    string imgName;
+}
+
+<h2>國家公園編號</h2>
+<br />
+
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-info">
+        <strong>無符合之資料</strong>
+    </div>
+}
+else
+{
+    <table class="table" style="border:3px #ffd800 dashed" cellpadding="10">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.名稱)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.縣市)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.地址)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.電話)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.網址)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.資源特色)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.介紹)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.名稱)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.縣市)
+                </td>
+                <td>
+                    <a href="https://www.google.com/maps/place/@item.地址"
+                        style="color:#D35400" target="_blank">@Html.DisplayFor(modelItem => item.地址)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.電話)
+                </td>
+                <td>
+                    <a href="@item.網址" style="color:#D4AC0D" target="_blank">
+                        @Html.DisplayFor(modelItem => item.網址)
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.資源特色)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.介紹)
+                </td>
+            </tr>
+        }
+    </table>
+
+    <br />
+
+    <div style="text-align:center">
+        @foreach (var item1 in Model)
+        {
+            imgName = "NP" + item1.編號.ToString() + ".jpg";
+            <img src="~/images/@imgName" style="margin:auto" />
+        }
+    </div>
+}

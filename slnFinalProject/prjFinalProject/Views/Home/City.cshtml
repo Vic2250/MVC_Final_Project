@@ -1,0 +1,93 @@
+﻿@model IEnumerable<prjFinalProject.Models.TableNPs1091761>
+
+@{
+    ViewBag.Title = "City";
+}
+
+<br />
+<br />
+
+<div class="row">
+    <div class=" panel panel-danger col-md-2">
+        <div class="panel panel-heading">
+            <h3 class="panel-title">縣市資訊</h3>
+        </div>
+        
+        <ul class="list-group">
+            <li class="list-group-item"><a href="/Home/City?city=臺北市">臺北市</a></li>
+            <li class="list-group-item"><a href="/Home/City?city=苗栗縣">苗栗縣</a></li>
+            <li class="list-group-item"><a href="/Home/City?city=南投縣">南投縣</a></li>
+            <li class="list-group-item"><a href="/Home/City?city=臺南市">臺南市</a></li>
+            <li class="list-group-item"><a href="/Home/City?city=高雄市">高雄市</a></li>
+            <li class="list-group-item"><a href="/Home/City?city=屏東縣">屏東縣</a></li>
+            <li class="list-group-item"><a href="/Home/City?city=花蓮縣">花蓮縣</a></li>
+            <li class="list-group-item"><a href="/Home/City?city=金門縣">金門縣</a></li>
+        </ul>
+
+    </div>
+    <div class="col-md-10" style="text-align:center">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.編號)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.名稱)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.縣市)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.地址)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.電話)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.網址)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.資源特色)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.介紹)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.編號)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.名稱)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.縣市)
+                    </td>
+                    <td>
+                        <a href="https://www.google.com/maps/place/@item.地址" style="color:#7DCEA0"
+                           target="_blank">
+                        @Html.DisplayFor(modelItem => item.地址)</a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.電話)
+                    </td>
+                    <td>
+                        <a href="@item.網址" style="color:#F1948A" target="_blank">
+                            @Html.DisplayFor(modelItem => item.網址)
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.資源特色)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.介紹)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
